@@ -34,12 +34,12 @@ const Login = ({ navigation }) => {
   }, [userLogin])
 
   return (
-    <View style={{ flex: 1, padding: 10 ,backgroundColor:"aqua"}}>
+    <View style={{ flex: 1, padding: 10 ,backgroundColor:"white"}}>
       <Text style={{
-        fontSize: 30,
-        fontWeight: "bold",
+        fontSize: 50,
+        // fontWeight: "bold",
         alignSelf: "center",
-        color: "red",
+        color: "blue",
         marginTop: 100,
         marginBottom: 50
       }}>
@@ -50,9 +50,9 @@ const Login = ({ navigation }) => {
         value={email}
         onChangeText={setEmail}
       />
-      <HelperText type='error' visible={hasErrorEmail()}>
+      {/* <HelperText type='error' visible={hasErrorEmail()}>
         Địa chỉ Email không hợp lệ
-      </HelperText>
+      </HelperText> */}
       <View style={{ flexDirection: "row" }}>
         <TextInput
           label={"Password"}
@@ -63,14 +63,12 @@ const Login = ({ navigation }) => {
         />
         
       </View>
-      <HelperText type='error' visible={hasErrorPassword()}>
-        Password có ít nhất 6 ký tự
-      </HelperText>
+      
       <Button mode='contained' textColor='black' buttonColor='pink' onPress={handleLogin} disabled={disableLogin}>
         Login
       </Button>
       <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-        <Text>Dont have an account ?</Text>
+        
         <Button onPress={() => navigation.navigate("Register")}>
           Create new account
         </Button>
